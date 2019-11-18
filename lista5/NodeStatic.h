@@ -19,7 +19,11 @@ public:
 
 	int getChildrenNumber();				//pobiera liczbê dzieci
 	void addNewChild();						//dodaje nowe dziecko
+	void addNewChild(NodeStatic newChild);	//dodaje nowe dziecko podane w parametrze
+	bool removeChild(NodeStatic* child);	//usuwa zadane dziecko (ca³e poddrzewo)
 	NodeStatic* getChild(int childOffset);	//pobiera wskaŸnik na dziecko o zadanym offsecie
+	NodeStatic* getParent();				//pobiera rodzica
+	int getOffset(NodeStatic* child);		//pobiera offset dziecka w wektorze
 
 	void print();							//wypisuje wartoœæ wêz³a
 	void printAllBelow();					//wypisuje wartoœci wszystkich wêz³ów pocz¹wszy od danego w dó³

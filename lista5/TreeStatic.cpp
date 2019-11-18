@@ -15,6 +15,14 @@ NodeStatic* TreeStatic::getRoot() {
 	return &(this->root);
 }
 
+bool TreeStatic::moveSubtree(NodeStatic* parentNode, NodeStatic* newChildNode) {
+	if (parentNode == nullptr || newChildNode == nullptr) {
+		return false;
+	}
+	parentNode->addNewChild(*newChildNode);
+	newChildNode->getParent()->removeChild(newChildNode);
+	return true;
+}
 
 void TreeStatic::printTree() {
 	this->root.printAllBelow();

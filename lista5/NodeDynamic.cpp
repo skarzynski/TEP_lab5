@@ -26,7 +26,24 @@ int NodeDynamic::getChildrenNumber() {
 }
 
 void NodeDynamic::addNewChild() {
-	this->children.push_back(new NodeDynamic());
+	NodeDynamic* newChild = new NodeDynamic();
+	newChild->parentNode = this;
+	this->children.push_back(newChild);
+}
+
+void NodeDynamic::addNewChild(NodeDynamic* newChild) {
+	this->children.push_back(newChild);
+	newChild->parentNode = this;
+}
+
+bool NodeDynamic::removeChild(NodeDynamic* child) {
+	int offset = child->getParent()->getOffset(child);
+	if (child == nullptr || offset == -1) {
+		return false;
+	}
+	child->getParent()->children.erase(child->getParent()->children.begin() + offset);
+	child->parentNode = NULL;
+	return true;
 }
 
 NodeDynamic* NodeDynamic::getChild(int childOffset) {
@@ -34,6 +51,22 @@ NodeDynamic* NodeDynamic::getChild(int childOffset) {
 		return nullptr;
 	}
 	return this->children.at(childOffset);
+}
+
+NodeDynamic* NodeDynamic::getParent() {
+	return this->parentNode;
+}
+
+int NodeDynamic::getOffset(NodeDynamic* child) {
+	int offset = -1;
+
+	for (int i = 0; i < this->getChildrenNumber(); i++) {
+		if (this->children.at(i) == child) {
+			offset = i;
+		}
+	}
+
+	return offset;
 }
 
 void NodeDynamic::print() {

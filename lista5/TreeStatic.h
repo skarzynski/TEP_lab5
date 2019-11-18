@@ -8,10 +8,12 @@ private:
 	NodeStatic root;			//korzeñ drzewa
 
 public:
-	TreeStatic();				//konstruktor domyœlny
+	TreeStatic();				//konstruktor bezparametrowy
 	~TreeStatic();				//destruktor
 
 	NodeStatic* getRoot();		//zwraca korzeñ drzewa
+
+	bool moveSubtree(NodeStatic* parentNode, NodeStatic* newChildNode); //przenosi poddrzewo z obcego drzewa do swojego
 
 	void printTree();			//wypisuje wartoœci wszystkich wêz³ów
 };
