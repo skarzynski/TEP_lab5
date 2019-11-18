@@ -27,7 +27,7 @@ void NodeStatic::addNewChild() {
 }
 
 NodeStatic* NodeStatic::getChild(int childOffset) {
-	if (childOffset < 0 || childOffset > this->getChildrenNumber()) {
+	if (childOffset < 0 || childOffset >= this->getChildrenNumber()) {
 		return NULL;
 	}
 	return &(this->children.at(childOffset));

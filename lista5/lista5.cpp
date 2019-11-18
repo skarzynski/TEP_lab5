@@ -2,36 +2,36 @@
 //
 
 #include "pch.h"
-#include "NodeStatic.h"
+#include "TreeStatic.h"
 
 #include <iostream>
 
 using namespace std;
 
 void treeTest() {
-	NodeStatic root;
+	TreeStatic tree;
 
-	root.addNewChild();
-	root.addNewChild();
+	tree.getRoot()->addNewChild();
+	tree.getRoot()->addNewChild();
 
-	root.getChild(0)->setValue(1);
-	root.getChild(1)->setValue(2);
-
-	root.getChild(0)->addNewChild();
-	root.getChild(0)->addNewChild();
-
-	root.getChild(0)->getChild(0)->setValue(11);
-	root.getChild(0)->getChild(1)->setValue(12);
+	tree.getRoot()->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(1)->setValue(2);
 	
-	root.getChild(1)->addNewChild();
-	root.getChild(1)->addNewChild();
+	tree.getRoot()->getChild(0)->addNewChild();
+	tree.getRoot()->getChild(0)->addNewChild();
 
-	root.getChild(1)->getChild(0)->setValue(21);
-	root.getChild(1)->getChild(1)->setValue(22);
+	tree.getRoot()->getChild(0)->getChild(0)->setValue(11);
+	tree.getRoot()->getChild(0)->getChild(1)->setValue(12);
+	
+	tree.getRoot()->getChild(1)->addNewChild();
+	tree.getRoot()->getChild(1)->addNewChild();
 
-	root.printAllBelow();
+	tree.getRoot()->getChild(1)->getChild(0)->setValue(21);
+	tree.getRoot()->getChild(1)->getChild(1)->setValue(22);
+
+	tree.printTree();
 	cout << endl;
-	root.getChild(0)->getChild(1)->printUp();
+	tree.getRoot()->getChild(0)->getChild(1)->printUp();
 }
 
 int main() {
