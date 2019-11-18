@@ -3,12 +3,13 @@
 
 #include "pch.h"
 #include "TreeStatic.h"
+#include "NodeDynamic.h"
 
 #include <iostream>
 
 using namespace std;
 
-void treeTest() {
+void treeTestStatic() {
 	TreeStatic tree;
 
 	tree.getRoot()->addNewChild();
@@ -34,9 +35,35 @@ void treeTest() {
 	tree.getRoot()->getChild(0)->getChild(1)->printUp();
 }
 
+void treeTestDynamic() {
+	NodeDynamic root;
+
+	root.addNewChild();
+	root.addNewChild();
+
+	root.getChild(0)->setValue(1);
+	root.getChild(1)->setValue(2);
+
+	root.getChild(0)->addNewChild();
+	root.getChild(0)->addNewChild();
+
+	root.getChild(0)->getChild(0)->setValue(11);
+	root.getChild(0)->getChild(1)->setValue(12);
+
+	root.getChild(1)->addNewChild();
+	root.getChild(1)->addNewChild();
+
+	root.getChild(1)->getChild(0)->setValue(21);
+	root.getChild(1)->getChild(1)->setValue(22);
+
+	root.printAllBelow();
+}
+
 int main() {
 
-	treeTest();
+	treeTestStatic();
+	cout << endl;
+	treeTestDynamic();
 
 }
 

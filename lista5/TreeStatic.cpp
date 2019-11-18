@@ -8,7 +8,7 @@ TreeStatic::TreeStatic() {
 
 
 TreeStatic::~TreeStatic() {
-
+	//default
 }
 
 NodeStatic* TreeStatic::getRoot() {
