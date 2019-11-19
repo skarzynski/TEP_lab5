@@ -32,8 +32,10 @@ void NodeDynamic::addNewChild() {
 }
 
 void NodeDynamic::addNewChild(NodeDynamic* newChild) {
-	this->children.push_back(newChild);
-	newChild->parentNode = this;
+	if (newChild != nullptr) {
+		this->children.push_back(newChild);
+		newChild->parentNode = this;
+	}
 }
 
 bool NodeDynamic::removeChild(NodeDynamic* child) {

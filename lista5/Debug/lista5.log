@@ -1,2 +1,5 @@
-﻿  TreeDynamic.cpp
+﻿  NodeDynamic.cpp
+c:\xampp\htdocs\tep_lab5\lista5\nodedynamic.cpp(15): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\xampp\htdocs\tep_lab5\lista5\nodedynamic.cpp(52): warning C4018: ">=": niezgodność typu ze znakiem/bez znaku
+c:\xampp\htdocs\tep_lab5\lista5\nodedynamic.cpp(80): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   lista5.vcxproj -> C:\xampp\htdocs\TEP_lab5\Debug\lista5.exe
