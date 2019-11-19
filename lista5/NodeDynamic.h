@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 
@@ -8,24 +8,27 @@ class NodeDynamic {
 
 private:
 	vector<NodeDynamic*> children;			//wektor dzieci
-	NodeDynamic* parentNode;				//wskaŸnik na rodzica
-	int value;								//wartoœæ
+	NodeDynamic* parentNode;				//wskaÅ¸nik na rodzica
+	int value;								//wartoÅ“Ã¦
 
 public:
 	NodeDynamic();							//kontruktor bezparametrowy
 	~NodeDynamic();							//destruktor
 
-	void setValue(int newValue);			//ustawia wartoœæ
+	void setValue(int newValue);			//ustawia wartoÅ“Ã¦
+	int getValue();							//pobiera wartoÅ›Ä‡ wÄ™zÅ‚a
 
-	int getChildrenNumber();				//pobiera liczbê dzieci
+	int getChildrenNumber();				//pobiera liczbÃª dzieci
 	void addNewChild();						//dodaje nowe dziecko
 	void addNewChild(NodeDynamic* newChild);//dodaje nowe dziecko podane w parametrze
-	bool removeChild(NodeDynamic* child);	//usuwa zadane dziecko (ca³e poddrzewo)
-	NodeDynamic* getChild(int childOffset);	//pobiera wskaŸnik na dziecko o zadanym offsecie
+	bool removeChild(NodeDynamic* child);	//usuwa zadane dziecko (caÂ³e poddrzewo)
+	NodeDynamic* getChild(int childOffset);	//pobiera wskaÅ¸nik na dziecko o zadanym offsecie
 	NodeDynamic* getParent();				//pobiera rodzica
 	int getOffset(NodeDynamic* child);		//pobiera offset dziecka w wektorze
+	int count(int val);						//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w swoim wektorze dzieci
+	int countAllBelow(int val);				//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w swoim poddrzewie
 
-	void print();							//wypisuje wartoœæ wêz³a
-	void printAllBelow();					//wypisuje wartoœci wszystkich wêz³ów pocz¹wszy od danego w dó³
+	void print();							//wypisuje wartoÅ“Ã¦ wÃªzÂ³a
+	void printAllBelow();					//wypisuje wartoÅ“ci wszystkich wÃªzÂ³Ã³w poczÂ¹wszy od danego w dÃ³Â³
 };
 

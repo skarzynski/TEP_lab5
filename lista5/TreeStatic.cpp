@@ -27,3 +27,7 @@ bool TreeStatic::moveSubtree(NodeStatic* parentNode, NodeStatic* newChildNode) {
 void TreeStatic::printTree() {
 	this->root.printAllBelow();
 }
+
+int TreeStatic::count(int val) {
+	return this->root.countAllBelow(val);
+}

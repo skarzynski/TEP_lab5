@@ -21,6 +21,10 @@ void NodeDynamic::setValue(int newValue) {
 	this->value = newValue;
 }
 
+int NodeDynamic::getValue() {
+	return this->value;
+}
+
 int NodeDynamic::getChildrenNumber() {
 	return this->children.size();
 }
@@ -69,6 +73,24 @@ int NodeDynamic::getOffset(NodeDynamic* child) {
 	}
 
 	return offset;
+}
+
+int NodeDynamic::count(int val) {
+	int counter = 0;
+	for (int i = 0; i < this->getChildrenNumber(); i++) {
+		if (this->children.at(i)->value == val) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+int NodeDynamic::countAllBelow(int val) {
+	int counter = this->count(val);
+	for (int i = 0; i < this->getChildrenNumber(); i++) {
+		counter += this->children.at(i)->countAllBelow(val);
+	}
+	return counter;
 }
 
 void NodeDynamic::print() {

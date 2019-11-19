@@ -27,3 +27,7 @@ bool TreeDynamic::moveSubtree(NodeDynamic* parentNode, NodeDynamic* newChildNode
 void TreeDynamic::printTree() {
 	this->root->printAllBelow();
 }
+
+int TreeDynamic::count(int val) {
+	return this->root->countAllBelow(val);
+}

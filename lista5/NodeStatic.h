@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 
@@ -8,24 +8,27 @@ class NodeStatic {
 	
 private:
 	vector<NodeStatic> children;			//wektor dzieci
-	NodeStatic* parentNode;					//wskaŸnik na rodzica
-	int value;								//wartoœæ
+	NodeStatic* parentNode;					//wskaÅ¸nik na rodzica
+	int value;								//wartoÅ“Ã¦
 
 public:
 	NodeStatic();							//kontruktor bezparametrowy
 	~NodeStatic();							//destruktor
 
-	void setValue(int newValue);			//ustawia wartoœæ
+	void setValue(int newValue);			//ustawia wartoÅ“Ã¦
+	int getValue();							//pobiera wartoÅ›Ä‡ wÄ™zÅ‚a
 
-	int getChildrenNumber();				//pobiera liczbê dzieci
+	int getChildrenNumber();				//pobiera liczbÃª dzieci
 	void addNewChild();						//dodaje nowe dziecko
 	void addNewChild(NodeStatic newChild);	//dodaje nowe dziecko podane w parametrze
-	bool removeChild(NodeStatic* child);	//usuwa zadane dziecko (ca³e poddrzewo)
-	NodeStatic* getChild(int childOffset);	//pobiera wskaŸnik na dziecko o zadanym offsecie
+	bool removeChild(NodeStatic* child);	//usuwa zadane dziecko (caÂ³e poddrzewo)
+	NodeStatic* getChild(int childOffset);	//pobiera wskaÅ¸nik na dziecko o zadanym offsecie
 	NodeStatic* getParent();				//pobiera rodzica
 	int getOffset(NodeStatic* child);		//pobiera offset dziecka w wektorze
+	int count(int val);						//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w swoim wektorze dzieci
+	int countAllBelow(int val);				//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w swoim poddrzewie
 
-	void print();							//wypisuje wartoœæ wêz³a
-	void printAllBelow();					//wypisuje wartoœci wszystkich wêz³ów pocz¹wszy od danego w dó³
-	void printUp();							//wypisuje wartoœci wszystkich wêz³ów pocz¹wszy od danego w górê
+	void print();							//wypisuje wartoÅ“Ã¦ wÃªzÂ³a
+	void printAllBelow();					//wypisuje wartoÅ“ci wszystkich wÃªzÂ³Ã³w poczÂ¹wszy od danego w dÃ³Â³
+	void printUp();							//wypisuje wartoÅ“ci wszystkich wÃªzÂ³Ã³w poczÂ¹wszy od danego w gÃ³rÃª
 };

@@ -1,20 +1,21 @@
-#pragma once
+ï»¿#pragma once
 
 #include "NodeDynamic.h"
 
 class TreeDynamic {
 
 private:
-	NodeDynamic* root;			//korzeñ drzewa
+	NodeDynamic* root;			//korzeÃ± drzewa
 
 public:
 	TreeDynamic();				//konstruktor bezparametrowy
 	~TreeDynamic();				//destruktor
 
-	NodeDynamic* getRoot();		//zwraca korzeñ drzewa
+	NodeDynamic* getRoot();		//zwraca korzeÃ± drzewa
 
 	bool moveSubtree(NodeDynamic* parentNode, NodeDynamic* newChildNode); //przenosi poddrzewo z obcego drzewa do swojego
 
-	void printTree();			//wypisuje wartoœci wszystkich wêz³ów
+	void printTree();			//wypisuje wartoÅ“ci wszystkich wÃªzÂ³Ã³w
+	int count(int val);			//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w drzewie
 };
 

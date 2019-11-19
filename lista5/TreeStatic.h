@@ -1,20 +1,21 @@
-#pragma once
+ï»¿#pragma once
 
 #include "NodeStatic.h"
 
 class TreeStatic {
 
 private:
-	NodeStatic root;			//korzeñ drzewa
+	NodeStatic root;			//korzeÃ± drzewa
 
 public:
 	TreeStatic();				//konstruktor bezparametrowy
 	~TreeStatic();				//destruktor
 
-	NodeStatic* getRoot();		//zwraca korzeñ drzewa
+	NodeStatic* getRoot();		//zwraca korzeÃ± drzewa
 
 	bool moveSubtree(NodeStatic* parentNode, NodeStatic* newChildNode); //przenosi poddrzewo z obcego drzewa do swojego
 
-	void printTree();			//wypisuje wartoœci wszystkich wêz³ów
+	void printTree();			//wypisuje wartoÅ“ci wszystkich wÃªzÂ³Ã³w
+	int count(int val);			//zlicza iloÅ›Ä‡ wystÄ…pieÅ„ argumentu w drzewie
 };
 

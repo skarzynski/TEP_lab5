@@ -82,6 +82,33 @@ void moveSubtreeTestStatic() {
 	}
 }
 
+void treeTestStaticCount() {
+	int valToSearch = 1;
+	TreeStatic tree;
+
+	tree.getRoot()->addNewChild();
+	tree.getRoot()->addNewChild();
+
+	tree.getRoot()->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(1)->setValue(2);
+
+	tree.getRoot()->getChild(0)->addNewChild();
+	tree.getRoot()->getChild(0)->addNewChild();
+
+	tree.getRoot()->getChild(0)->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(0)->getChild(1)->setValue(12);
+
+	tree.getRoot()->getChild(1)->addNewChild();
+	tree.getRoot()->getChild(1)->addNewChild();
+
+	tree.getRoot()->getChild(1)->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(1)->getChild(1)->setValue(22);
+
+	tree.printTree();
+	cout << endl;
+	cout << "Szukana wartosc: " << valToSearch << ", wystepuje: " << tree.count(valToSearch) << " razy" << endl;
+}
+
 void treeTestDynamic() {
 	TreeDynamic tree;
 
@@ -153,6 +180,33 @@ void moveSubtreeTestDynamic() {
 	}
 }
 
+void treeTestDynamicCount() {
+	int valToSearch = 2;
+	TreeDynamic tree;
+
+	tree.getRoot()->addNewChild();
+	tree.getRoot()->addNewChild();
+
+	tree.getRoot()->getChild(0)->setValue(12);
+	tree.getRoot()->getChild(1)->setValue(2);
+
+	tree.getRoot()->getChild(0)->addNewChild();
+	tree.getRoot()->getChild(0)->addNewChild();
+
+	tree.getRoot()->getChild(0)->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(0)->getChild(1)->setValue(2);
+
+	tree.getRoot()->getChild(1)->addNewChild();
+	tree.getRoot()->getChild(1)->addNewChild();
+
+	tree.getRoot()->getChild(1)->getChild(0)->setValue(1);
+	tree.getRoot()->getChild(1)->getChild(1)->setValue(22);
+
+	tree.printTree();
+	cout << endl;
+	cout << "Szukana wartosc: " << valToSearch << ", wystepuje: " << tree.count(valToSearch) << " razy" << endl;
+}
+
 int main() {
 
 	treeTestStatic();
@@ -165,6 +219,12 @@ int main() {
 	cout << endl;
 	cout << endl;
 	moveSubtreeTestDynamic();
+	cout << endl;
+	cout << endl;
+	treeTestStaticCount();
+	cout << endl;
+	cout << endl;
+	treeTestDynamicCount();
 
 }
 

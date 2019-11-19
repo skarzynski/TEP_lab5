@@ -16,6 +16,10 @@ void NodeStatic::setValue(int newValue) {
 	this->value = newValue;
 }
 
+int NodeStatic::getValue() {
+	return this->value;
+}
+
 int NodeStatic::getChildrenNumber() {
 	return this->children.size();
 }
@@ -62,6 +66,24 @@ int NodeStatic::getOffset(NodeStatic* child) {
 	}
 
 	return offset;
+}
+
+int NodeStatic::count(int val) {
+	int counter = 0;
+	for (int i = 0; i < this->getChildrenNumber(); i++) {
+		if (this->children.at(i).value == val) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+int NodeStatic::countAllBelow(int val) {
+	int counter = this->count(val);
+	for (int i = 0; i < this->getChildrenNumber(); i++) {
+		counter += this->children.at(i).countAllBelow(val);
+	}
+	return counter;
 }
 
 void NodeStatic::print() {
